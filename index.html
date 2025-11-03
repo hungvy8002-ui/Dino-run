@@ -2603,15 +2603,25 @@ html[subframe] body {
 	}
   </script>
 	<script>
-  // Cho phép chơi bằng cảm ứng (chạm = phím Space)
+  // Chơi bằng cảm ứng (gọi trực tiếp jump khi chạm)
   document.addEventListener("touchstart", function(e) {
-    e.preventDefault(); // Ngăn cuộn hoặc zoom
-    const spaceEvent = new KeyboardEvent("keydown", { key: " " });
-    document.dispatchEvent(spaceEvent);
+    e.preventDefault();
+
+    try {
+      // Nếu game có hàm jump() thì gọi nó luôn
+      if (typeof jump === "function") {
+        jump();
+      } else {
+        // Nếu không có jump, giả lập phím cách như phương án 2
+        const spaceEvent = new KeyboardEvent("keydown", { key: " " });
+        document.dispatchEvent(spaceEvent);
+      }
+    } catch (err) {
+      console.warn("Không tìm thấy hàm jump():", err);
+    }
   });
 </script>
 
-	  
 
 
 </body>
