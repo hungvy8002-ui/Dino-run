@@ -2602,8 +2602,16 @@ html[subframe] body {
 	  hideClass(".onlyforchrome");
 	}
   </script>
-	  
+	<script>
+  // Cho phép chơi bằng cảm ứng (chạm = phím Space)
+  document.addEventListener("touchstart", function(e) {
+    e.preventDefault(); // Ngăn cuộn hoặc zoom
+    const spaceEvent = new KeyboardEvent("keydown", { key: " " });
+    document.dispatchEvent(spaceEvent);
+  });
+</script>
 
+	  
 
 
 </body>
