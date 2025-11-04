@@ -3,31 +3,9 @@
 <head>
 <title>Dino run</title>
 <meta name="description" content="Dino Chrome">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-	<!--script type="text/javascript" src="a.js"></script-->
 	<script type="text/javascript">
-	function hideClass(name) {
-       var myClasses = document.querySelectorAll(name),
-      i = 0,
-      l = myClasses.length;
-
-      for (i; i < l; i++) {
-        myClasses[i].style.display = 'none';
-      }
-	}
-    // Copyright (c) 2023 The Chromium Authors. All rights reserved. Adaptation done by Elizalde Alexios
-    // Use of this source code is governed by a BSD-style license that can be
-    // found in the LICENSE file.
     (function() {
     'use strict';
-    /**
-    * T-Rex runner.
-    * @param {string} outerContainerId Outer containing element id.
-    * @param {object} opt_config
-    * @constructor
-    * @export
-    */
     function Runner(outerContainerId, opt_config) {
     // Singleton
     if (Runner.instance_) {
