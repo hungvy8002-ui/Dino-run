@@ -2621,6 +2621,27 @@ html[subframe] body {
     }
   });
 </script>
+<script>
+document.addEventListener("click", function() {
+  if (window.Runner && Runner.instance_) {
+    if (Runner.instance_.crashed) {
+      Runner.instance_.restart();
+    } else {
+      Runner.instance_.tRex.startJump();
+    }
+  }
+});
+
+document.addEventListener("touchstart", function() {
+  if (window.Runner && Runner.instance_) {
+    if (Runner.instance_.crashed) {
+      Runner.instance_.restart();
+    } else {
+      Runner.instance_.tRex.startJump();
+    }
+  }
+});
+</script>
 
 
 
